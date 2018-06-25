@@ -8,6 +8,9 @@ var address = document.getElementById("address").value;
 var area = document.getElementById("areaCode").value;
 var phone = document.getElementById("phoneNumber").value;
 var email1 = document.getElementById("email1").value;
+var checkboxs=document.getElementsByName("contMeth");
+var okay=false;
+var count = 0;
 
 
     if (document.getElementById("fName").value == "First Name") {
@@ -107,12 +110,18 @@ var email1 = document.getElementById("email1").value;
         alert("Please choose a meal preference");
         return false;
     }
-
-    if (document.forms["myForm"]["contMeth"].value === "") {
-        alert("Please choose at least two contact methods");
-        return false;
+for(var i=0,l=checkboxs.length;i<l;i++) {
+    if(checkboxs[i].checked) {
+    count++;
     }
-	 
+}
+    if(count > 1){
+    okay=true;    
+    }
+    if(!okay){
+    alert("Please choose at least two contact methods");
+    return false;
+    }
 }
 function onBlur(el) {
     if (el.value === '') {
