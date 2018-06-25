@@ -16,7 +16,7 @@
 
 <div id="content">
 
-<form name="myForm" onsubmit="return validateForm()" action="mailto:SelkieFaery@gmail.com" method="post" enctype="text/plain">
+<form name="myForm" action="mailto:SelkieFaery@gmail.com" method="post" enctype="text/plain">
 <br>
 <fieldset>
 
@@ -128,13 +128,13 @@
 <tr>
 <th>Contact Method:*<br>
 (select more than one)</th>
-<th><input type="checkbox" name="contMeth" id="phone" value="Phone">
+<th><input type="checkbox" name="contMeth" id="contMeth" value="Phone">
 <label for="phone">Phone</label>
-<input type="checkbox" name="contMeth" id="email" value="E-Mail">
+<input type="checkbox" name="contMeth" id="contMeth" value="E-Mail">
 <label for="email">E-Mail</label><br>
-<input type="checkbox" name="contMeth" id="mail" value="Mail">
+<input type="checkbox" name="contMeth" id="contMeth" value="Mail">
 <label for="mail">Mail</label>
-<input type="checkbox" name="contMeth" id="linkedIn" value="LinkedIn">
+<input type="checkbox" name="contMeth" id="contMeth" value="LinkedIn">
 <label for="linkedIn">LinkedIn</label></th>
 </tr>
 <tr>
@@ -142,8 +142,10 @@
 <th><textarea rows="4" cols="50" name="comment"></textarea></th>
 </tr>
 </table>
-<input type="submit" value="Submit"><br>
+<input type="submit" onsubmit="return validateForm()" value="Submit"> 
+<input type="button" onclick="reset()" value="Reset form"><br>
 <br>
+
 </fieldset>
 </form>
 
