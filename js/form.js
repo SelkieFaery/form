@@ -133,3 +133,6 @@ function onFocus(el) {
         el.value = '';
     }
 }
+function reset() {
+    document.getElementById("myForm").reset();
+}
